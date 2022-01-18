@@ -1,0 +1,12 @@
+[Unit]
+Description=Promtail for Grafana Logging
+After=network.target
+
+[Service]
+Restart=always
+RestartSec=1
+User=username
+ExecStart=/usr/local/bin/promtail -config.file /etc/sysconfig/promtail-config.yml
+
+[Install]
+WantedBy = multi-user.target
